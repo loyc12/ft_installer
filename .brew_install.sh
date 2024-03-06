@@ -23,6 +23,7 @@ export PATH=\$HOME/.brew/bin:\$PATH
 export HOMEBREW_CACHE=/tmp/\$USER/Homebrew/Caches
 export HOMEBREW_TEMP=/tmp/\$USER/Homebrew/Temp
 
+echo ""
 mkdir -p \$HOMEBREW_CACHE
 mkdir -p \$HOMEBREW_TEMP
 
@@ -57,8 +58,9 @@ source \$HOME/.brewconfig.zsh
 EOL
 fi
 
+# Source the .brewconfig script
+export PATH=$HOME/.brew/bin:$PATH
 source $HOME/.brewconfig.zsh
+
 hash -r
 brew update
-
-echo "\nPlease open a new shell to finish installation"

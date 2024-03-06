@@ -38,8 +38,7 @@ brew:
 	@echo "$(YELLOW)\nInstalling Brew\n $(DEFCOL)"
 	$(HIDE) bash .brew_install.sh; \
 	if [ $$? -eq 0 ]; then \
-		echo "$(BLUE)\nBrew installed ! $(DEFCOL)"; \
-		echo "$(RED)\n! CLOSE AND REOPEN TERMINAL !\n $(DEFCOL)"; \
+		echo "$(BLUE)\nBrew installed !\n $(DEFCOL)"; \
 	else \
 		echo "$(RED)\n! FAILED TO INSTALL BREW !\n $(DEFCOL)"; \
 	fi
