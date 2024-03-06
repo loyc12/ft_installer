@@ -12,7 +12,7 @@
 rm -rf $HOME/.brew
 git clone --depth=1 https://github.com/Homebrew/brew $HOME/.brew
 echo ""
-echo "This step may take a while, please be patient..."
+echo "This next step may take a while, please be patient..."
 echo ""
 
 # Create .brewconfig script in home directory
@@ -60,8 +60,7 @@ source \$HOME/.brewconfig.zsh
 EOL
 fi
 
-# Source the .zshrc and update Homebrew
-export PATH=$HOME/.brew/bin:$PATH
+# Sources the .zshrc
 source $HOME/.zshrc > /dev/null 2>&1
 
 hash -r
