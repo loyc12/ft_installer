@@ -11,6 +11,9 @@
 # Delete and reinstall Homebrew from Github repo
 rm -rf $HOME/.brew
 git clone --depth=1 https://github.com/Homebrew/brew $HOME/.brew
+echo ""
+echo "This step may take a while, please be patient..."
+echo ""
 
 # Create .brewconfig script in home directory
 cat > $HOME/.brewconfig.zsh <<EOL
@@ -23,7 +26,6 @@ export PATH=\$HOME/.brew/bin:\$PATH
 export HOMEBREW_CACHE=/tmp/\$USER/Homebrew/Caches
 export HOMEBREW_TEMP=/tmp/\$USER/Homebrew/Temp
 
-echo ""
 mkdir -p \$HOMEBREW_CACHE
 mkdir -p \$HOMEBREW_TEMP
 
@@ -58,9 +60,9 @@ source \$HOME/.brewconfig.zsh
 EOL
 fi
 
-# Source the .brewconfig script
+# Source the .zshrc and update Homebrew
 export PATH=$HOME/.brew/bin:$PATH
-source $HOME/.brewconfig.zsh
+source $HOME/.zshrc > /dev/null 2>&1
 
 hash -r
 brew update
